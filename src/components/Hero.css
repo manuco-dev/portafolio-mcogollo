@@ -1,0 +1,106 @@
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: var(--header-height);
+    overflow: hidden;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.hero-greeting {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-size: 5rem;
+    /* Larger for desktop */
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    letter-spacing: -3px;
+    background: linear-gradient(to right, #ffffff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.text-accent {
+    -webkit-text-fill-color: var(--accent);
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border: 1px solid var(--text-primary);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.hero-bg-glow {
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    transform: translateY(-50%);
+    width: 700px;
+    height: 700px;
+    background: var(--accent-glow);
+    filter: blur(180px);
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}

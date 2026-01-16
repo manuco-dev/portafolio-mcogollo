@@ -1,0 +1,37 @@
+.footer {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+    background: var(--bg-secondary);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.footer-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-link {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.social-link:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
