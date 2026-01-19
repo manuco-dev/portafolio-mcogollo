@@ -1,17 +1,41 @@
 :root {
-  --bg-primary: #050505;
-  --bg-secondary: #0f0f0f;
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --accent: #2563eb; /* Royal Blue */
-  --accent-glow: rgba(37, 99, 235, 0.5);
-  --border: #27272a;
-  
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   --container-width: 1200px;
   --header-height: 80px;
+
+  /* Default Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f4f5;
+  --text-primary: #09090b;
+  --text-secondary: #52525b;
+  --accent: #2563eb;
+  --accent-glow: rgba(37, 99, 235, 0.15);
+  --border: #e4e4e7;
+  --toggle-icon: #0f172a;
+  /* Moon color for light mode toggle */
+
+  /* Gradients */
+  --hero-gradient: linear-gradient(to right, #09090b, #4338ca);
+
+  /* Navbar */
+  --nav-bg: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #050505;
+  --bg-secondary: #0f0f0f;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --accent: #2563eb;
+  --accent-glow: rgba(37, 99, 235, 0.5);
+  --border: #27272a;
+  --toggle-icon: #fbbf24;
+  /* Sun color for dark mode toggle */
+
+  --hero-gradient: linear-gradient(to right, #ffffff, #a5b4fc);
+  --nav-bg: rgba(5, 5, 5, 0.85);
 }
 
 * {
@@ -29,7 +53,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.1;
@@ -68,25 +97,57 @@ button {
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
 }
 
 /* Utilities */
-.text-accent { color: var(--accent); }
-.text-center { text-align: center; }
-.flex { display: flex; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.gap-4 { gap: 1rem; }
-.mt-4 { margin-top: 1rem; }
-.mb-4 { margin-bottom: 1rem; }
-.mt-8 { margin-top: 2rem; }
-.mb-8 { margin-bottom: 2rem; }
+.text-accent {
+  color: var(--accent);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}

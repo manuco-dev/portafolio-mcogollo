@@ -2,22 +2,22 @@ import './Portfolio.css';
 
 const projects = [
     {
-        title: "E-Commerce Dashboard",
-        category: "React / Node.js",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-        link: "#"
+        title: "Mundo Vacacional CK",
+        category: "Web App / Turismo",
+        image: "/mundo-vacacional.png",
+        link: "https://www.mundovacacionalck.com/"
     },
     {
-        title: "Finance App",
-        category: "Mobile / Flutter",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
-        link: "#"
+        title: "InteliaSalud",
+        category: "Web App / Salud",
+        image: "/inteliasalud.png",
+        link: "https://www.inteliasalud.com/"
     },
     {
-        title: "Medical Platform",
-        category: "Web App / Python",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
-        link: "#"
+        title: "Prueba Firma",
+        category: "Web App / Utilidad",
+        image: "/prueba-firma.png",
+        link: "https://prueba-firma.netlify.app/"
     }
 ];
 
