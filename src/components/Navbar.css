@@ -26,9 +26,11 @@
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 500;
     color: var(--text-primary);
+    z-index: 1001;
+    letter-spacing: -0.5px;
 }
 
 .logo span {
@@ -37,7 +39,7 @@
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     list-style: none;
     align-items: center;
 }
@@ -46,6 +48,7 @@
     font-size: 0.95rem;
     color: var(--text-secondary);
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -67,22 +70,97 @@
     border-color: var(--text-primary);
 }
 
+.nav-controls {
+    display: none;
+    /* Only for mobile */
+    align-items: center;
+    gap: 1rem;
+    z-index: 1001;
+}
+
 .theme-toggle {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     cursor: pointer;
     color: var(--toggle-icon);
     padding: 0.5rem;
     border-radius: 50%;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 1rem;
 }
 
 .theme-toggle:hover {
     background-color: var(--bg-secondary);
-    transform: rotate(15deg);
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--bg-primary);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5rem;
+        transition: 0.4s ease-in-out;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 2rem;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-controls {
+        display: flex;
+    }
+
+    .mobile-only {
+        display: flex;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .menu-btn span {
+        width: 25px;
+        height: 2px;
+        background: var(--text-primary);
+        transition: 0.3s ease;
+    }
+
+    .menu-btn.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-btn.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }

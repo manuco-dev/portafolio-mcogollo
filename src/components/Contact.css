@@ -164,6 +164,14 @@
     border-bottom: 1px solid var(--border);
 }
 
+@media (max-width: 480px) {
+    .form-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
 .form-header h3 {
     font-size: 1.2rem;
     font-weight: 700;

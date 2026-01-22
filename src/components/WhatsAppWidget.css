@@ -33,7 +33,6 @@
     border-radius: 50%;
     object-fit: cover;
     background: white;
-    /* Contrast for the avatar */
 }
 
 .online-badge {
@@ -93,13 +92,33 @@
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
+    .whatsapp-widget {
+        bottom: 20px;
+        right: 20px;
+    }
+
     .avatar-container {
-        width: 65px;
-        height: 65px;
+        width: 60px;
+        height: 60px;
+        border-width: 2px;
+    }
+
+    .online-badge {
+        width: 14px;
+        height: 14px;
+        bottom: 2px;
+        right: 2px;
     }
 
     .tooltip {
         display: none;
-        /* Hide tooltip on small screens to avoid overflow */
+    }
+}
+
+/* Specific adjustment for very small screens to avoid button overlap */
+@media (max-width: 480px) {
+    .whatsapp-widget {
+        bottom: 15px;
+        right: 15px;
     }
 }

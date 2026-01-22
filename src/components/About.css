@@ -51,8 +51,8 @@
 
 .about-stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
 }
 
 .stat-item {
@@ -80,4 +80,22 @@
     font-size: 0.9rem;
     color: var(--text-secondary);
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 4rem 0;
+    }
+
+    .about-text h3 {
+        font-size: 1.6rem;
+    }
+
+    .stat-item {
+        padding: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
 }
