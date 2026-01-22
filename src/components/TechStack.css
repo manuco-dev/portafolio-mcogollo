@@ -1,0 +1,85 @@
+.tech-stack-section {
+    padding: 4rem 0;
+    background-color: var(--bg-primary);
+}
+
+.tech-grid {
+    display: grid;
+    /* Increased minimum width to 260px to accommodate longer text */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    min-width: 0;
+    /* Critical for grid item text overflow */
+}
+
+.tech-item:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+    background: var(--bg-primary);
+}
+
+.tech-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 45px;
+    /* Fixed width for better alignment */
+}
+
+.tech-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    /* Allows text to wrap or truncate properly */
+    overflow: hidden;
+}
+
+.tech-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    /* Remove nowrap to allow wrapping if a word is extremely long or card is narrow */
+    line-height: 1.2;
+}
+
+.tech-category {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    /* Reduced spacing to save space */
+    opacity: 0.8;
+    margin-top: 2px;
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+    .tech-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-item {
+        padding: 1rem;
+    }
+}

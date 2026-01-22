@@ -1,40 +1,55 @@
+import { motion } from 'framer-motion';
 import './About.css';
 
 const About = () => {
     return (
         <section id="about" className="section about-section">
             <div className="container about-container">
-                <div className="about-header">
+                <motion.div
+                    className="about-header"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
                     <span className="section-subtitle">MI FILOSOFÍA</span>
                     <h2 className="section-title">Sobre mi enfoque</h2>
-                </div>
+                </motion.div>
 
                 <div className="about-content">
-                    <div className="about-text">
-                        <h3>Ingeniería con propósito.</h3>
+                    <motion.div
+                        className="about-text"
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <h3>Experiencia Integral en Tecnología.</h3>
                         <p>
-                            No solo escribo código; construyo ecosistemas digitales que impulsan el crecimiento.
-                            Mi enfoque combina la <strong>precisión técnica</strong> de la ingeniería de sistemas
-                            con la <strong>creatividad</strong> del desarrollo web moderno.
+                            Combino la capacidad de construcción del <strong>Desarrollo Full Stack</strong> con la disciplina operativa del <strong>Soporte IT Nivel 2</strong>.
                         </p>
                         <p>
-                            Creo firmemente que la tecnología debe ser invisible: tan fluida y eficiente que el usuario
-                            solo perciba el valor que aporta a su vida o negocio.
+                            Mi trayectoria en el <strong>sector gobierno</strong> me ha permitido aplicar estándares rigurosos y metodologías como <strong>ITIL</strong> para garantizar la continuidad y eficiencia de los servicios tecnológicos. No solo resuelvo problemas, optimizo ecosistemas completos.
                         </p>
-                    </div>
+                    </motion.div>
+
                     <div className="about-stats">
-                        <div className="stat-item">
-                            <span className="stat-number">5+</span>
-                            <span className="stat-label">Años de Exp.</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="stat-number">20+</span>
-                            <span className="stat-label">Proyectos</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="stat-number">100%</span>
-                            <span className="stat-label">Compromiso</span>
-                        </div>
+                        {[
+                            { val: "5+", label: "Años de Exp." },
+                            { val: "20+", label: "Proyectos" },
+                            { val: "100%", label: "Compromiso" }
+                        ].map((stat, i) => (
+                            <motion.div
+                                key={i}
+                                className="stat-item"
+                                initial={{ opacity: 0, scale: 0.5 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: i * 0.2, type: "spring" }}
+                                viewport={{ once: true }}
+                            >
+                                <span className="stat-number">{stat.val}</span>
+                                <span className="stat-label">{stat.label}</span>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </div>

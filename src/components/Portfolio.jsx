@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Portfolio.css';
 
 const projects = [
@@ -25,10 +26,26 @@ const Portfolio = () => {
     return (
         <section id="portfolio" className="section portfolio-section">
             <div className="container">
-                <h2 className="section-title">Proyectos Destacados</h2>
+                <motion.h2
+                    className="section-title"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    Proyectos Destacados
+                </motion.h2>
                 <div className="portfolio-grid">
                     {projects.map((project, index) => (
-                        <a href={project.link} key={index} className="project-card">
+                        <motion.a
+                            href={project.link}
+                            key={index}
+                            className="project-card"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            whileHover={{ y: -10 }}
+                            transition={{ delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                        >
                             <div className="project-image-container">
                                 <img src={project.image} alt={project.title} className="project-image" />
                                 <div className="project-overlay">
@@ -39,7 +56,7 @@ const Portfolio = () => {
                                 <span className="project-category">{project.category}</span>
                                 <h3 className="project-title">{project.title}</h3>
                             </div>
-                        </a>
+                        </motion.a>
                     ))}
                 </div>
             </div>

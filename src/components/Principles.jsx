@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Principles.css';
 
 const Principles = () => {
@@ -39,19 +40,32 @@ const Principles = () => {
     return (
         <section className="section principles-section">
             <div className="container">
-                <div className="section-header">
+                <motion.div
+                    className="section-header"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
                     <h2 className="section-title">Principios</h2>
-                </div>
+                </motion.div>
 
                 <div className="principles-grid">
                     {principles.map((item, index) => (
-                        <div key={index} className="principle-card">
+                        <motion.div
+                            key={index}
+                            className="principle-card"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            whileHover={{ y: -10 }}
+                            transition={{ delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                        >
                             <div className={`principle-icon ${item.color}`}>
                                 {item.icon}
                             </div>
                             <h3>{item.title}</h3>
                             <p>{item.description}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import Contact from '../components/Contact';
+import WhatsAppWidget from '../components/WhatsAppWidget';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -6,6 +7,7 @@ const ContactPage = () => {
         <main className="contact-page-wrapper">
             <div className="contact-bg-pattern"></div>
             <Contact />
+            <WhatsAppWidget />
         </main>
     );
 };
