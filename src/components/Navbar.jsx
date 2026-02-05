@@ -53,7 +53,7 @@ const Navbar = () => {
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     <li><a href="/#about" onClick={closeMenu}>Sobre mí</a></li>
                     <li><a href="/#services" onClick={closeMenu}>Servicios</a></li>
-                    <li><Link to="/knowledge" onClick={closeMenu}>Gestor IT</Link></li>
+
                     <li><a href="/#portfolio" onClick={closeMenu}>Portafolio</a></li>
                     <li><Link to="/contact" className="cta-button" onClick={closeMenu}>Contacto</Link></li>
                     <li className="desktop-only">
