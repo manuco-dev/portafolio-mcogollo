@@ -1,85 +1,121 @@
 .tech-stack-section {
-    padding: 4rem 0;
-    background-color: var(--bg-primary);
+    padding: 2rem 0 4rem;
+    background-color: var(--bg-primary, #f9fafb);
+    /* Fallback light gray */
 }
 
-.tech-grid {
+/* Main Grid Layout for Categories */
+.tech-groups-grid {
     display: grid;
-    /* Increased minimum width to 260px to accommodate longer text */
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns based on image */
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.tech-item {
+/* Category Card */
+.tech-category-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow per image */
+    border: 1px solid #eee;
+    height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+/* Specific Highlight for blue border on hover */
+.tech-category-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.category-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #111827;
+    /* Dark text */
+}
+
+/* Grid for Items within a Category */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns inside category */
     gap: 1rem;
-    padding: 1.2rem;
-    background: var(--bg-secondary);
-    border-radius: 16px;
-    border: 1px solid var(--border);
+    flex-grow: 1;
+    /* Fill remaining space */
+}
+
+/* Individual Tech Item Card */
+.tech-card {
+    background: #fdfdfd;
+    border-radius: 10px;
+    padding: 1.25rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
     transition: all 0.3s ease;
-    min-width: 0;
-    /* Critical for grid item text overflow */
+    cursor: pointer;
 }
 
-.tech-item:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border-color: var(--accent);
-    background: var(--bg-primary);
+.tech-card:hover {
+    background: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-.tech-icon {
-    font-size: 2rem;
+.icon-wrapper {
+    height: 48px;
+    width: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    width: 45px;
-    /* Fixed width for better alignment */
 }
 
-.tech-info {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    /* Allows text to wrap or truncate properly */
-    overflow: hidden;
+.tech-icon-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .tech-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 0;
-    /* Remove nowrap to allow wrapping if a word is extremely long or card is narrow */
-    line-height: 1.2;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151;
+    /* Gray-700 */
+    text-align: center;
 }
 
-.tech-category {
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    /* Reduced spacing to save space */
-    opacity: 0.8;
-    margin-top: 2px;
-    line-height: 1;
-}
-
+/* Responsive Design */
 @media (max-width: 1024px) {
-    .tech-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    .tech-groups-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .tech-grid {
+    .tech-groups-grid {
         grid-template-columns: 1fr;
     }
 
-    .tech-item {
-        padding: 1rem;
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* More items per row on mobile card */
+    }
+}
+
+@media (max-width: 480px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

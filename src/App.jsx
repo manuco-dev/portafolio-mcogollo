@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ContactPage from './pages/ContactPage';
+import KnowledgeManager from './pages/KnowledgeManager';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/knowledge" element={<KnowledgeManager />} />
         </Routes>
         <Footer />
       </div>
