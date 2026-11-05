@@ -16,39 +16,34 @@
 
 /* Retrato con marco fino */
 .hero-photo {
-    width: 100%;
-    max-width: 240px;
-    margin: 2.5rem auto 0;
-    padding: 5px;
-    border-radius: 20px;
-    background: linear-gradient(150deg,
-            rgba(37, 99, 235, 0.32),
-            rgba(37, 99, 235, 0.05) 45%,
-            rgba(37, 99, 235, 0.22));
-    box-shadow:
-        0 30px 60px -30px rgba(2, 6, 23, 0.45),
-        0 2px 8px rgba(2, 6, 23, 0.05);
-}
-
-.hero-photo img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    background: #fff;
+    display: none;
+    margin: 0;
 }
 
 @media (min-width: 768px) {
     .hero-photo {
+        display: block;
         justify-self: center;
+        width: 100%;
         max-width: 300px;
         margin-top: 3.5rem;
         padding: 6px;
         border-radius: 24px;
+        background: linear-gradient(150deg,
+                rgba(37, 99, 235, 0.32),
+                rgba(37, 99, 235, 0.05) 45%,
+                rgba(37, 99, 235, 0.22));
+        box-shadow:
+            0 30px 60px -30px rgba(2, 6, 23, 0.45),
+            0 2px 8px rgba(2, 6, 23, 0.05);
     }
 
     .hero-photo img {
+        display: block;
+        width: 100%;
+        height: auto;
         border-radius: 19px;
+        background: #fff;
     }
 }
 
