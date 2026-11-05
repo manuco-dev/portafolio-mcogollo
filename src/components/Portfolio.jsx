@@ -3,16 +3,10 @@ import './Portfolio.css';
 
 const projects = [
     {
-        title: "Mundo Vacacional CK",
-        category: "Web App / Turismo",
-        image: "/mundo-vacacional.png",
-        link: "https://www.mundovacacionalck.com/"
-    },
-    {
-        title: "InteliaSalud",
-        category: "Web App / Salud",
-        image: "/inteliasalud.png",
-        link: "https://www.inteliasalud.com/"
+        title: "Concurso DIAN",
+        category: "Web App / Educación",
+        image: "/concurso-dian.png",
+        link: "https://www.concursodian.online/"
     },
     {
         title: "Prueba Firma",
