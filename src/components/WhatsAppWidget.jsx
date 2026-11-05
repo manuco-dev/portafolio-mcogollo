@@ -20,7 +20,7 @@ const WhatsAppWidget = () => {
         >
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-link">
                 <div className="avatar-container">
-                    <img src="/whatsapp-avatar.png" alt="Manuel IT Support" className="avatar-img" />
+                    <img src="/whatsapp-avatar.webp" alt="Manuel Cogollo" className="avatar-img" width="70" height="70" />
                     <div className="online-badge"></div>
                     <div className="tooltip">¡Hola! ¿En qué puedo ayudarte?</div>
                 </div>

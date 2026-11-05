@@ -4,7 +4,7 @@ import './Hero.css';
 
 const Hero = () => {
     return (
-        <section id="about" className="hero-section">
+        <section className="hero-section">
             <div className="container hero-container">
                 <motion.h2
                     className="hero-greeting"

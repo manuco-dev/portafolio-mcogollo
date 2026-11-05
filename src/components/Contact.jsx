@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import './Contact.css';
 
+// En desarrollo, Vite hace proxy de /api al backend (ver vite.config.js).
+// En producción, define VITE_API_URL si el API vive en otro dominio.
+const API_BASE = import.meta.env.VITE_API_URL ?? '';
+
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -23,7 +27,7 @@ const Contact = () => {
         setStatus('submitting');
 
         try {
-            const response = await fetch('http://localhost:5000/api/contact', {
+            const response = await fetch(`${API_BASE}/api/contact`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
