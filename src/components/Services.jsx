@@ -3,44 +3,57 @@ import './Services.css';
 
 const services = [
     {
-        title: "IA & Agentes Autónomos",
-        description: "Creación de bots para WhatsApp y automatización de procesos con agentes de IA (OpenAI). La tecnología del futuro, hoy.",
-        icon: "🤖"
+        title: "Desarrollo de Software",
+        icon: "💻",
+        items: [
+            "Aplicaciones web y sistemas empresariales.",
+            "Desarrollo de páginas web y APIs."
+        ]
     },
     {
-        title: "Desarrollo con IA",
-        description: "Utilizamos herramientas de IA de vanguardia para un desarrollo más rápido, creativo, robusto y con menos riesgos de seguridad.",
-        icon: "⚡"
+        title: "Inteligencia Artificial y Automatización",
+        icon: "🤖",
+        items: [
+            "Soluciones inteligentes con IA.",
+            "Automatización de procesos y tareas."
+        ]
     },
     {
-        title: "Desarrollo Full Stack",
-        description: "Creación de aplicaciones web completas (Frontend y Backend) modernas, escalables y responsivas.",
-        icon: "💻"
+        title: "Soporte Técnico y Recuperación de Datos",
+        icon: "🛠️",
+        items: [
+            "Mantenimiento de computadores e impresoras.",
+            "Diagnóstico y reparación de equipos.",
+            "Recuperación de datos e información.",
+            "Soporte técnico remoto y presencial.",
+            "Mantenimiento e instalación de infraestructura en redes y servidores."
+        ]
     },
     {
-        title: "Seguridad de Redes & IDS",
-        description: "Seguridad avanzada, firewalls, antivirus e implementación de IDS para detección de intrusos no autorizados.",
-        icon: "🛡️"
+        title: "Redes e Infraestructura TI",
+        icon: "🌐",
+        items: [
+            "Instalación y configuración de redes.",
+            "Conectividad e infraestructura tecnológica.",
+            "Configuración de equipos de red."
+        ]
     },
     {
-        title: "Mantenimiento Hardware & CCTV",
-        description: "Mantenimientos preventivos y correctivos a equipos de cómputo, impresoras y sistemas de cámaras CCTV.",
-        icon: "🛠️"
+        title: "Software y Licenciamiento",
+        icon: "🖥️",
+        items: [
+            "Instalación y configuración de Windows y Office.",
+            "Asesoría y licenciamiento de software original."
+        ]
     },
     {
-        title: "Gestión TI & Gobierno",
-        description: "Aplicación de mejores prácticas ITIL en entornos gubernamentales y privados de alta exigencia.",
-        icon: "🏛️"
-    },
-    {
-        title: "Recuperación de Datos",
-        description: "Recuperación de información en discos duros, USB y cualquier medio magnético con total confidencialidad.",
-        icon: "🔍"
-    },
-    {
-        title: "Licenciamiento & SO",
-        description: "Gestión y licenciamiento oficial para sistemas operativos Windows 10 / 11 y software corporativo.",
-        icon: "📄"
+        title: "Marketing Digital y Redes Sociales",
+        icon: "📱",
+        items: [
+            "Gestión y optimización de páginas en redes sociales (Facebook, Instagram, LinkedIn, YouTube, etc.).",
+            "Estrategias de marketing digital para aumentar tu presencia online.",
+            "Creación de contenido y campañas publicitarias en Facebook Ads."
+        ]
     }
 ];
 
@@ -59,7 +72,7 @@ const Services = () => {
                 <div className="services-grid">
                     {services.map((service, index) => (
                         <motion.div
-                            key={index}
+                            key={service.title}
                             className="service-card"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +82,11 @@ const Services = () => {
                         >
                             <div className="service-icon">{service.icon}</div>
                             <h3 className="service-title">{service.title}</h3>
-                            <p className="service-description">{service.description}</p>
+                            <ul className="service-list">
+                                {service.items.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                            </ul>
                         </motion.div>
                     ))}
                 </div>

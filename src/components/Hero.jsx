@@ -21,7 +21,7 @@ const Hero = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
                     Ingeniero de Sistemas <br />
-                    <span className="text-accent">Full Stack & Soporte IT</span>
+                    <span className="text-accent">Desarrollador y Soporte IT</span>
                 </motion.h1>
                 <motion.p
                     className="hero-description"
@@ -29,7 +29,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                    Especialista en Soporte IT Nivel 2 y Desarrollo Full Stack potenciado por Inteligencia Artificial. Automatización con agentes de IA, soporte avanzado y soluciones robustas para el sector gobierno y privado.
+                    Especialista en Soporte IT Nivel 2 y desarrollo de software potenciado por Inteligencia Artificial. Automatización con agentes de IA, soporte avanzado y soluciones robustas para el sector gobierno y privado.
                 </motion.p>
                 <motion.div
                     className="hero-actions"

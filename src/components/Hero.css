@@ -11,7 +11,7 @@
 .hero-container {
     position: relative;
     z-index: 2;
-    max-width: 900px;
+    max-width: 980px;
 }
 
 .hero-greeting {
@@ -24,8 +24,9 @@
 }
 
 .hero-title {
-    font-size: 5rem;
+    font-size: 4.5rem;
     line-height: 1.05;
+    overflow-wrap: break-word;
     margin-bottom: 2rem;
     letter-spacing: -3px;
     background: var(--hero-gradient);
@@ -99,6 +100,13 @@
     border-radius: 50%;
 }
 
+@media (max-width: 1150px) {
+    .hero-title {
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 3.2rem;
@@ -124,5 +132,12 @@
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 2.1rem;
+        letter-spacing: -1px;
     }
 }

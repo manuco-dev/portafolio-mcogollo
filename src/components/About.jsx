@@ -25,7 +25,7 @@ const About = () => {
                     >
                         <h3>Experiencia Integral en Tecnología.</h3>
                         <p>
-                            Combino la capacidad de construcción del <strong>Desarrollo Full Stack</strong> con la disciplina operativa del <strong>Soporte IT Nivel 2</strong>.
+                            Combino la capacidad de construcción del <strong>Desarrollo de Software</strong> con la disciplina operativa del <strong>Soporte IT Nivel 2</strong>.
                         </p>
                         <p>
                             Mi trayectoria en el <strong>sector gobierno</strong> me ha permitido aplicar estándares rigurosos y metodologías como <strong>ITIL</strong> para garantizar la continuidad y eficiencia de los servicios tecnológicos. No solo resuelvo problemas, optimizo ecosistemas completos.

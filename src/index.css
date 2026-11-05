@@ -86,6 +86,8 @@ button {
 
 .section {
   padding: 6rem 0;
+  /* Evita que el navbar fijo tape el título al navegar por anclas */
+  scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 .grid {
