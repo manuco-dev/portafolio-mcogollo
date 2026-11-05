@@ -5,8 +5,20 @@ const projects = [
     {
         title: "Concurso DIAN",
         category: "Web App / Educación",
-        image: "/concurso-dian.png",
+        image: "/concurso-dian.webp",
         link: "https://www.concursodian.online/"
+    },
+    {
+        title: "Distribuciones JK",
+        category: "Web App / Construcción",
+        image: "/distribuciones-jk.webp",
+        link: "https://www.distribucionesjk.com/"
+    },
+    {
+        title: "Distribuciones VIP",
+        category: "Web App / Retail",
+        image: "/distribuciones-vip.webp",
+        link: "https://www.distribucionesvip.com/"
     },
     {
         title: "Prueba Firma",
@@ -41,7 +53,13 @@ const Portfolio = () => {
                             viewport={{ once: true }}
                         >
                             <div className="project-image-container">
-                                <img src={project.image} alt={project.title} className="project-image" />
+                                <img
+                                    src={project.image}
+                                    alt={`Captura de ${project.title}`}
+                                    className="project-image"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                                 <div className="project-overlay">
                                     <span>Ver Proyecto</span>
                                 </div>
