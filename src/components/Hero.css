@@ -11,7 +11,75 @@
 .hero-container {
     position: relative;
     z-index: 2;
-    max-width: 980px;
+    max-width: 1136px;
+}
+
+/* Retrato con marco fino */
+.hero-photo {
+    display: none;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .hero-photo {
+        display: block;
+        justify-self: center;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 3.5rem;
+        padding: 6px;
+        border-radius: 24px;
+        background: linear-gradient(150deg,
+                rgba(37, 99, 235, 0.32),
+                rgba(37, 99, 235, 0.05) 45%,
+                rgba(37, 99, 235, 0.22));
+        box-shadow:
+            0 30px 60px -30px rgba(2, 6, 23, 0.45),
+            0 2px 8px rgba(2, 6, 23, 0.05);
+    }
+
+    .hero-photo img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 19px;
+        background: #fff;
+    }
+}
+
+/* Salto de linea solo cuando el titular va en columna estrecha */
+.hero-br {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .hero-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        align-items: center;
+        gap: 4.5rem;
+    }
+
+    .hero-title {
+        font-size: 3.4rem;
+        letter-spacing: -2px;
+    }
+
+    .hero-br {
+        display: inline;
+    }
+
+    .hero-photo {
+        justify-self: end;
+        max-width: 320px;
+        margin-top: 0;
+        padding: 7px;
+        border-radius: 26px;
+    }
+
+    .hero-photo img {
+        border-radius: 19px;
+    }
 }
 
 .hero-greeting {

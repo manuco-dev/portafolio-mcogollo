@@ -6,40 +6,57 @@ const Hero = () => {
     return (
         <section className="hero-section">
             <div className="container hero-container">
-                <motion.h2
-                    className="hero-greeting"
-                    initial={{ opacity: 0, y: 12 }}
+                <div className="hero-copy">
+                    <motion.h2
+                        className="hero-greeting"
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.35 }}
+                    >
+                        Hola, soy Manuel
+                    </motion.h2>
+                    <motion.h1
+                        className="hero-title"
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.35, delay: 0.04 }}
+                    >
+                        Ingeniero de Sistemas <br />
+                        <span className="text-accent">Desarrollador y <br className="hero-br" />Soporte IT</span>
+                    </motion.h1>
+                    <motion.p
+                        className="hero-description"
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.35, delay: 0.08 }}
+                    >
+                        Especialista en Soporte IT Nivel 2 y desarrollo de software potenciado por Inteligencia Artificial. Automatización con agentes de IA, soporte avanzado y soluciones robustas para el sector gobierno y privado.
+                    </motion.p>
+                    <motion.div
+                        className="hero-actions"
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.35, delay: 0.12 }}
+                    >
+                        <a href="#portfolio" className="btn btn-primary">Ver Proyectos</a>
+                        <Link to="/contact" className="btn btn-secondary">Hablemos</Link>
+                    </motion.div>
+                </div>
+
+                <motion.figure
+                    className="hero-photo"
+                    initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35 }}
+                    transition={{ duration: 0.45, delay: 0.1 }}
                 >
-                    Hola, soy Manuel
-                </motion.h2>
-                <motion.h1
-                    className="hero-title"
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35, delay: 0.04 }}
-                >
-                    Ingeniero de Sistemas <br />
-                    <span className="text-accent">Desarrollador y Soporte IT</span>
-                </motion.h1>
-                <motion.p
-                    className="hero-description"
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35, delay: 0.08 }}
-                >
-                    Especialista en Soporte IT Nivel 2 y desarrollo de software potenciado por Inteligencia Artificial. Automatización con agentes de IA, soporte avanzado y soluciones robustas para el sector gobierno y privado.
-                </motion.p>
-                <motion.div
-                    className="hero-actions"
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35, delay: 0.12 }}
-                >
-                    <a href="#portfolio" className="btn btn-primary">Ver Proyectos</a>
-                    <Link to="/contact" className="btn btn-secondary">Hablemos</Link>
-                </motion.div>
+                    <img
+                        src="/manuel-retrato.webp"
+                        alt="Retrato de Manuel Cogollo"
+                        width="760"
+                        height="950"
+                        fetchPriority="high"
+                    />
+                </motion.figure>
             </div>
             <motion.div
                 className="hero-bg-glow"
