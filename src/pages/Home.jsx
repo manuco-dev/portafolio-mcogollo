@@ -3,7 +3,6 @@ import About from '../components/About';
 import Principles from '../components/Principles';
 import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
-import TechStack from '../components/TechStack';
 import WhatsAppWidget from '../components/WhatsAppWidget';
 
 const Home = () => {
@@ -12,7 +11,6 @@ const Home = () => {
             <Hero />
             <About />
             <Services />
-            <TechStack />
             <Principles />
             <Portfolio />
             <WhatsAppWidget />
