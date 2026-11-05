@@ -6,8 +6,7 @@ const services = [
         title: "Desarrollo de Software",
         icon: "💻",
         items: [
-            "Aplicaciones web y sistemas empresariales.",
-            "Desarrollo de páginas web y APIs."
+            "Aplicaciones web, landing pages, tiendas virtuales, carritos de compra, etc."
         ]
     },
     {
