@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { site } from '../siteConfig';
 import './Legal.css';
 
 const Legal = () => {
@@ -25,7 +26,7 @@ const Legal = () => {
                     <p>
                         Este sitio es el portafolio profesional de Manuel Cogollo. El responsable del
                         tratamiento de los datos es Manuel Cogollo, contactable en{' '}
-                        <a href="mailto:comanuel7@gmail.com">comanuel7@gmail.com</a>.
+                        <a href={`mailto:${site.email}`}>{site.email}</a>.
                     </p>
                     <p><strong>Qué datos se recogen.</strong> Solo los que escribes voluntariamente en el formulario de contacto: nombre, correo electrónico, teléfono (opcional), asunto y mensaje.</p>
                     <p><strong>Para qué.</strong> Únicamente para responder a tu solicitud. No se usan para envíos comerciales, no se elaboran perfiles y no se venden ni ceden a terceros.</p>

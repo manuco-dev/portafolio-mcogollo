@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { site } from '../siteConfig';
 import './Contact.css';
 
 // En desarrollo, Vite hace proxy de /api al backend (ver vite.config.js).
@@ -77,7 +78,7 @@ const Contact = () => {
                         </div>
                         <div>
                             <span className="info-label">Correo</span>
-                            <a href="mailto:comanuel7@gmail.com" className="info-link">comanuel7@gmail.com</a>
+                            <a href={`mailto:${site.email}`} className="info-link">{site.email}</a>
                         </div>
                     </div>
 
@@ -87,7 +88,7 @@ const Contact = () => {
                         </div>
                         <div>
                             <span className="info-label">Teléfono</span>
-                            <p className="info-value">+57 301 373 0306</p>
+                            <a href={`tel:${site.phone.tel}`} className="info-link">{site.phone.display}</a>
                         </div>
                     </div>
 

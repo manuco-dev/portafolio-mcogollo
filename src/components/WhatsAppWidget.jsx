@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
+import { site } from '../siteConfig';
 import './WhatsAppWidget.css';
 
 const WhatsAppWidget = () => {
-    const phoneNumber = "573013730306";
-    const message = "Hola Manuel, vi tu portafolio y me gustaría contactarte.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${site.phone.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`;
 
     return (
         <motion.div
@@ -18,9 +17,9 @@ const WhatsAppWidget = () => {
                 delay: 2
             }}
         >
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-link">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-link" aria-label="Escribir por WhatsApp">
                 <div className="avatar-container">
-                    <img src="/whatsapp-avatar.webp" alt="Manuel Cogollo" className="avatar-img" width="70" height="70" />
+                    <img src="/whatsapp-avatar.webp" alt={site.name} className="avatar-img" width="70" height="70" />
                     <div className="online-badge"></div>
                     <div className="tooltip">¡Hola! ¿En qué puedo ayudarte?</div>
                 </div>
