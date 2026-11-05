@@ -4,7 +4,7 @@
 export const site = {
     name: 'Manuel Cogollo',
     role: 'Ingeniero de Sistemas, Desarrollador y Soporte IT',
-    url: 'https://manuelcogollo.com',
+    url: 'https://www.manutic.online',
 
     email: 'comanuel7@gmail.com',
 
