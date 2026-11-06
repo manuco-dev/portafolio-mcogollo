@@ -1,13 +1,35 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { LazyMotion, domAnimation, MotionConfig } from 'motion/react';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, LazyMotion, domAnimation, MotionConfig } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import ContactPage from './pages/ContactPage';
 import Legal from './pages/Legal';
 import NotFound from './pages/NotFound';
 
 import './App.css';
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  // Al cambiar de ruta se vuelve arriba; sin esto se hereda el scroll anterior
+  useEffect(() => {
+    if (!location.hash) window.scrollTo(0, 0);
+  }, [location.pathname, location.hash]);
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+        <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
+        <Route path="/legal" element={<PageTransition><Legal /></PageTransition>} />
+        <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 function App() {
   return (
@@ -18,12 +40,7 @@ function App() {
         <Router>
           <div className="app-container">
             <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/legal" element={<Legal />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <AnimatedRoutes />
             <Footer />
           </div>
         </Router>
