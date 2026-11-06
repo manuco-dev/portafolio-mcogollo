@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { m } from 'motion/react';
+import { EASE } from '../motion';
 import './Principles.css';
 
 const Principles = () => {
@@ -40,24 +41,24 @@ const Principles = () => {
     return (
         <section className="section principles-section">
             <div className="container">
-                <motion.div
+                <m.div
                     className="section-header"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
                     <h2 className="section-title">Principios</h2>
-                </motion.div>
+                </m.div>
 
                 <div className="principles-grid">
                     {principles.map((item, index) => (
-                        <motion.div
+                        <m.div
                             key={index}
                             className="principle-card"
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             whileHover={{ y: -10 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: index * 0.08, duration: 0.55, ease: EASE }}
                             viewport={{ once: true }}
                         >
                             <div className={`principle-icon ${item.color}`}>
@@ -65,7 +66,7 @@ const Principles = () => {
                             </div>
                             <h3>{item.title}</h3>
                             <p>{item.description}</p>
-                        </motion.div>
+                        </m.div>
                     ))}
                 </div>
             </div>

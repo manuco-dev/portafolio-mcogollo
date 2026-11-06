@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { m } from 'motion/react';
+import { EASE } from '../motion';
 import './Portfolio.css';
 
 const projects = [
@@ -32,24 +33,24 @@ const Portfolio = () => {
     return (
         <section id="portfolio" className="section portfolio-section">
             <div className="container">
-                <motion.h2
+                <m.h2
                     className="section-title"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
                     Proyectos Destacados
-                </motion.h2>
+                </m.h2>
                 <div className="portfolio-grid">
                     {projects.map((project, index) => (
-                        <motion.a
+                        <m.a
                             href={project.link}
                             key={index}
                             className="project-card"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             whileHover={{ y: -10 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: index * 0.08, duration: 0.55, ease: EASE }}
                             viewport={{ once: true }}
                         >
                             <div className="project-image-container">
@@ -68,7 +69,7 @@ const Portfolio = () => {
                                 <span className="project-category">{project.category}</span>
                                 <h3 className="project-title">{project.title}</h3>
                             </div>
-                        </motion.a>
+                        </m.a>
                     ))}
                 </div>
             </div>

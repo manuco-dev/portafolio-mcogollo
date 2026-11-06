@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { m } from 'motion/react';
+import { EASE } from '../motion';
 import './Services.css';
 
 const services = [
@@ -60,23 +61,23 @@ const Services = () => {
     return (
         <section id="services" className="section services-section">
             <div className="container">
-                <motion.h2
+                <m.h2
                     className="section-title"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
                     Servicios Especializados
-                </motion.h2>
+                </m.h2>
                 <div className="services-grid">
                     {services.map((service, index) => (
-                        <motion.div
+                        <m.div
                             key={service.title}
                             className="service-card"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             whileHover={{ y: -10 }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
+                            transition={{ delay: index * 0.08, duration: 0.55, ease: EASE }}
                             viewport={{ once: true }}
                         >
                             <div className="service-icon">{service.icon}</div>
@@ -86,7 +87,7 @@ const Services = () => {
                                     <li key={item}>{item}</li>
                                 ))}
                             </ul>
-                        </motion.div>
+                        </m.div>
                     ))}
                 </div>
             </div>

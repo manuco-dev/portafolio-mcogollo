@@ -1,11 +1,12 @@
-import { motion } from 'framer-motion';
+import { m } from 'motion/react';
+import { EASE } from '../motion';
 import './About.css';
 
 const About = () => {
     return (
         <section id="about" className="section about-section">
             <div className="container about-container">
-                <motion.div
+                <m.div
                     className="about-header"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -13,14 +14,14 @@ const About = () => {
                 >
                     <span className="section-subtitle">MI FILOSOFÍA</span>
                     <h2 className="section-title">Sobre mi enfoque</h2>
-                </motion.div>
+                </m.div>
 
                 <div className="about-content">
-                    <motion.div
+                    <m.div
                         className="about-text"
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.6, ease: EASE }}
                         viewport={{ once: true }}
                     >
                         <h3>Experiencia Integral en Tecnología.</h3>
@@ -30,7 +31,7 @@ const About = () => {
                         <p>
                             Mi trayectoria en el <strong>sector gobierno</strong> me ha permitido aplicar estándares rigurosos y metodologías como <strong>ITIL</strong> para garantizar la continuidad y eficiencia de los servicios tecnológicos. No solo resuelvo problemas, optimizo ecosistemas completos.
                         </p>
-                    </motion.div>
+                    </m.div>
 
                     <div className="about-stats">
                         {[
@@ -38,7 +39,7 @@ const About = () => {
                             { val: "20+", label: "Proyectos" },
                             { val: "100%", label: "Compromiso" }
                         ].map((stat, i) => (
-                            <motion.div
+                            <m.div
                                 key={i}
                                 className="stat-item"
                                 initial={{ opacity: 0, scale: 0.5 }}
@@ -48,7 +49,7 @@ const About = () => {
                             >
                                 <span className="stat-number">{stat.val}</span>
                                 <span className="stat-label">{stat.label}</span>
-                            </motion.div>
+                            </m.div>
                         ))}
                     </div>
                 </div>
